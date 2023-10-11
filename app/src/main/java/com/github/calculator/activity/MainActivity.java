@@ -1,22 +1,16 @@
 package com.github.calculator.activity;
 
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.os.Bundle;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.github.calculator.R;
 import com.github.calculator.fragments.CalculatorFragment;
 import com.github.calculator.fragments.GradeFragment;
 
 public class MainActivity extends AppCompatActivity {
-
-    private Button calculatorButton;
-
-    private Button gradeButton;
 
     private CalculatorFragment calculatorFragment;
 
@@ -28,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         setSupportActionBar(findViewById(R.id.toolbar));
 
-        calculatorButton = findViewById(R.id.calculatorButton);
-        gradeButton = findViewById(R.id.gradeButton);
+        Button calculatorButton = findViewById(R.id.calculatorButton);
+        Button gradeButton = findViewById(R.id.gradeButton);
 
         calculatorFragment = new CalculatorFragment();
         gradeFragment = new GradeFragment();
