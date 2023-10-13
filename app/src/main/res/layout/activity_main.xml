@@ -18,66 +18,59 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:background="?attr/colorOnBackground"
         android:minHeight="?attr/actionBarSize"
         android:theme="@style/Base.Theme.Calculator"
-        app:layout_constraintBottom_toBottomOf="@+id/gradeButton"
+        app:layout_constraintBottom_toTopOf="@+id/tabLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:title="Calculadora"
+        app:title="CollegeCraft"
         app:titleTextColor="?attr/colorSecondary" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:background="?attr/colorOnBackground"
+        app:layout_constraintBottom_toTopOf="@+id/contentFrame"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar"
+        app:tabIconTint="?attr/colorSecondary"
+        app:tabIndicatorColor="?attr/colorSecondary"
+        app:tabSelectedTextColor="?attr/colorSecondary"
+        app:tabTextColor="?attr/colorSecondary">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/calculadoraTabItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/baseline_calculate_24"
+            android:text="Calculadora" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/gradeTabItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/baseline_notes_24"
+            android:text="Notas" />
+    </com.google.android.material.tabs.TabLayout>
 
     <FrameLayout
         android:id="@+id/contentFrame"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginBottom="40dp"
         android:background="?attr/colorOnBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout">
 
     </FrameLayout>
-
-    <Button
-        android:id="@+id/gradeButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="688dp"
-        android:background="@color/white"
-        android:textColor="@color/white"
-        app:icon="@drawable/baseline_notes_24"
-        app:iconGravity="textStart"
-        app:iconTint="@color/blue"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/calculatorButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="688dp"
-        android:background="?attr/colorPrimary"
-        android:textColor="@color/white"
-        app:icon="@drawable/baseline_calculate_24"
-        app:iconGravity="textEnd"
-        app:iconTint="?attr/colorSecondary"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/gradeButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

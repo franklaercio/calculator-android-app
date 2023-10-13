@@ -11,6 +11,8 @@ import androidx.fragment.app.FragmentTransaction;
 import com.github.calculator.R;
 import com.github.calculator.fragments.CalculatorFragment;
 import com.github.calculator.fragments.GradeFragment;
+import com.google.android.material.tabs.TabItem;
+import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,8 +26,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         setSupportActionBar(findViewById(R.id.toolbar));
 
-        Button calculatorButton = findViewById(R.id.calculatorButton);
-        Button gradeButton = findViewById(R.id.gradeButton);
+        TabLayout tabLayout = findViewById(R.id.tabLayout);
 
         calculatorFragment = new CalculatorFragment();
         gradeFragment = new GradeFragment();
@@ -34,18 +35,32 @@ public class MainActivity extends AppCompatActivity {
         initTransaction.add(R.id.contentFrame, calculatorFragment);
         initTransaction.commit();
 
-        calculatorButton.setOnClickListener(view -> {
-            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.contentFrame, calculatorFragment);
-            calculatorButton.setBackgroundTintMode(PorterDuff.Mode.LIGHTEN);
-            gradeButton.setSelected(false);
-            transaction.commit();
-        });
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                switch(tab.getPosition()) {
+                    case 0:
+                        FragmentTransaction calcFragment = getSupportFragmentManager().beginTransaction();
+                        calcFragment.replace(R.id.contentFrame, calculatorFragment);
+                        calcFragment.commit();
+                        break;
+                    case 1:
+                        FragmentTransaction graFragment = getSupportFragmentManager().beginTransaction();
+                        graFragment.replace(R.id.contentFrame, gradeFragment);
+                        graFragment.commit();
+                        break;
+                }
+            }
 
-        gradeButton.setOnClickListener(view -> {
-            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.contentFrame, gradeFragment);
-            transaction.commit();
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
         });
     }
 }

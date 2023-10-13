@@ -20,10 +20,6 @@ public class CalculatorFragment extends Fragment {
     private TextView resultTextView;
     private TextView calculationTextView;
 
-    private String currentOperator = "";
-
-    private double num1 = 0, num2 = 0;
-    private double preResult = 0;
     private boolean isNewNumber = true;
     private boolean isOperatorClicked = true;
 
@@ -86,60 +82,45 @@ public class CalculatorFragment extends Fragment {
         Button btn14 = view.findViewById(R.id.divideSignalButton);
         btn14.setOnClickListener(v -> onOperatorClick("/"));
 
-//        Button btn15 = view.findViewById(R.id.deleteButton);
-//        btn15.setOnClickListener(v -> onClearClick(view));
-//
-//        Button btn16 = view.findViewById(R.id.resultButton);
-//        btn16.setOnClickListener(v -> onEqualsClick(view));
+        Button btn15 = view.findViewById(R.id.deleteButton);
+        btn15.setOnClickListener(v -> onClearClick());
+
+        Button btn16 = view.findViewById(R.id.resultButton);
+        btn16.setOnClickListener(v -> onEqualsClick());
 
         return view;
     }
 
     private void onNumberClick(int number) {
-        if (isNewNumber) {
-            calculationTextView.setText(String.valueOf(number));
-            isNewNumber = false;
-        } else {
-            String currentText = calculationTextView.getText().toString();
-            calculationTextView.setText(currentText.concat(String.valueOf(number)));
-
-            if(isOperatorClicked) {
-                calculate();
-            }
-        }
+        String currentText = calculationTextView.getText().toString();
+        calculationTextView.setText(currentText.concat(String.valueOf(number)));
+        calculate();
     }
 
-//    public void onEqualsClick(View view) {
-//        calculate();
-//        operator = "";
-//        resultTextView.setText("");
-//    }
+    public void onEqualsClick() {
+        calculationTextView.setText(resultTextView.getText().toString());
+        resultTextView.setText("");
+    }
 
     public void onOperatorClick(String operator) {
-        if(!isOperatorClicked) {
-            isOperatorClicked = true;
-            String currentText = calculationTextView.getText().toString();
-            calculationTextView.setText(currentText.concat(String.valueOf(operator)));
-        } else {
-            String currentText = calculationTextView.getText().toString();
-            calculationTextView.setText(currentText.concat(String.valueOf(operator)));
-        }
+        String currentText = calculationTextView.getText().toString();
+        calculationTextView.setText(currentText.concat(String.valueOf(operator)));
     }
 
     private void calculate() {
         Expression e = new Expression(calculationTextView.getText().toString());
         double v = e.calculate();
 
-        resultTextView.setText(String.valueOf(v));
+        if(Double.isNaN(v)) {
+            Toast.makeText(getActivity(), "Divisão por zero", Toast.LENGTH_LONG).show();
+            onClearClick();
+        } else {
+            resultTextView.setText(String.valueOf(v));
+        }
     }
 
-//    public void onClearClick(View view) {
-//        inputText = "";
-//        num1 = 0;
-//        num2 = 0;
-//        resultTextView.setText("");
-//        calculationTextView.setText("");
-//    }
-
-    // 6666 + 6666 - 8888
+    public void onClearClick() {
+        resultTextView.setText("");
+        calculationTextView.setText("");
+    }
 }

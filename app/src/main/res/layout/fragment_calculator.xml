@@ -13,10 +13,22 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Desenvolvido por Frank Laércio"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline5"
+            app:layout_constraintVertical_bias="0.904" />
+
         <Button
             android:id="@+id/multiplicationSignalButton"
             style="@style/Widget.Material3.Button.UnelevatedButton"
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
@@ -36,7 +48,7 @@
         <Button
             android:id="@+id/divideSignalButton"
             style="@style/Widget.Material3.Button.UnelevatedButton"
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
@@ -57,7 +69,7 @@
         <Button
             android:id="@+id/sixNumberButton"
             style="@style/Widget.Material3.Button.UnelevatedButton"
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
@@ -76,7 +88,7 @@
         <Button
             android:id="@+id/twoOneButton"
             style="@style/Widget.Material3.Button.UnelevatedButton"
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
@@ -94,7 +106,7 @@
         <Button
             android:id="@+id/threeNumberButton"
             style="@style/Widget.Material3.Button.UnelevatedButton"
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="10dp"
@@ -110,7 +122,7 @@
         <Button
             android:id="@+id/sevenNumberButton"
             style="@style/Widget.Material3.Button.UnelevatedButton"
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
@@ -127,7 +139,7 @@
         <Button
             android:id="@+id/minusSignalButton"
             style="@style/Widget.Material3.Button.UnelevatedButton"
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
@@ -144,7 +156,7 @@
         <Button
             android:id="@+id/eigthNumberButton"
             style="@style/Widget.Material3.Button.UnelevatedButton"
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
@@ -161,7 +173,7 @@
         <Button
             android:id="@+id/fourNumberButton"
             style="@style/Widget.Material3.Button.UnelevatedButton"
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="10dp"
@@ -177,7 +189,7 @@
         <Button
             android:id="@+id/sumSignalButton"
             style="@style/Widget.Material3.Button.UnelevatedButton"
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
@@ -194,13 +206,13 @@
         <Button
             android:id="@+id/deleteButton"
             style="@style/Widget.Material3.Button.UnelevatedButton"
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="8dp"
             android:backgroundTint="?attr/colorAccent"
-            android:text="DEL"
+            android:text="C"
             android:textColor="#FF5252"
             android:textColorHighlight="@color/gray"
             android:textColorLink="@color/blue"
@@ -214,7 +226,7 @@
         <Button
             android:id="@+id/resultButton"
             style="@style/Widget.Material3.Button.UnelevatedButton"
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
@@ -234,7 +246,7 @@
         <Button
             android:id="@+id/nineNumberButton"
             style="@style/Widget.Material3.Button.UnelevatedButton"
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
@@ -250,7 +262,7 @@
         <Button
             android:id="@+id/nineNumberButton2"
             style="@style/Widget.Material3.Button.UnelevatedButton"
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
@@ -268,7 +280,7 @@
         <Button
             android:id="@+id/fiveNumberButton"
             style="@style/Widget.Material3.Button.UnelevatedButton"
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
@@ -285,7 +297,7 @@
         <Button
             android:id="@+id/oneNumberButton"
             style="@style/Widget.Material3.Button.UnelevatedButton"
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"

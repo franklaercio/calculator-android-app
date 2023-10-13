@@ -59,10 +59,11 @@
 
         <Button
             android:id="@+id/calculateGradeButton"
-            style="@style/Widget.AppCompat.Button"
             android:layout_width="350dp"
             android:layout_height="50dp"
+            android:backgroundTint="?attr/colorSecondary"
             android:text="Calcular"
+            android:textColor="?attr/colorOnBackground"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.491"
