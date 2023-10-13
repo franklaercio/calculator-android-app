@@ -19,8 +19,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:backgroundTint="?attr/colorPrimary"
+        android:background="?attr/colorOnBackground"
         android:minHeight="?attr/actionBarSize"
         android:theme="@style/Base.Theme.Calculator"
         app:layout_constraintBottom_toBottomOf="@+id/gradeButton"
@@ -29,14 +28,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:title="Calculadora de Notas"
-        app:titleTextColor="@color/white" />
+        app:title="Calculadora"
+        app:titleTextColor="?attr/colorSecondary" />
 
     <FrameLayout
         android:id="@+id/contentFrame"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginBottom="40dp"
+        android:background="?attr/colorOnBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -47,31 +48,36 @@
     </FrameLayout>
 
     <Button
-        android:id="@+id/calculatorButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:background="?attr/colorPrimary"
-        android:backgroundTint="?attr/colorOnSecondary"
-        android:text="Calculadora"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
         android:id="@+id/gradeButton"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:background="?attr/colorPrimary"
-        android:backgroundTint="?attr/colorSecondary"
-        android:text="Notas"
+        android:layout_height="0dp"
+        android:layout_marginTop="688dp"
+        android:background="@color/white"
         android:textColor="@color/white"
+        app:icon="@drawable/baseline_notes_24"
+        app:iconGravity="textStart"
+        app:iconTint="@color/blue"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/calculatorButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="688dp"
+        android:background="?attr/colorPrimary"
+        android:textColor="@color/white"
+        app:icon="@drawable/baseline_calculate_24"
+        app:iconGravity="textEnd"
+        app:iconTint="?attr/colorSecondary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/gradeButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

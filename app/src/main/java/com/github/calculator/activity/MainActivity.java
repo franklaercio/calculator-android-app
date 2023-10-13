@@ -1,5 +1,7 @@
 package com.github.calculator.activity;
 
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.widget.Button;
 
@@ -35,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
         calculatorButton.setOnClickListener(view -> {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.contentFrame, calculatorFragment);
+            calculatorButton.setBackgroundTintMode(PorterDuff.Mode.LIGHTEN);
+            gradeButton.setSelected(false);
             transaction.commit();
         });
 
